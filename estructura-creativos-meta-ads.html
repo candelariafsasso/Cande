@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Creativos Método 111</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf7f2;--surface:#fff;--ink:#2a2420;--muted:#6f655c;--line:#e8e0d5;--accent:#b5653a;--accent-soft:#f6e7dc;
+--video:#7a4fb3;--video-bg:#efe7fa;--imagen:#2f7d6b;--imagen-bg:#e2f3ee;--carrusel:#b5653a;--carrusel-bg:#f8e8dc;--ugc:#2f62a8;--ugc-bg:#e3ecf8;}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1815;--surface:#25211d;--ink:#f0e9e1;--muted:#ab9f93;--line:#3a332c;--accent:#e2956a;--accent-soft:#3a2a20;
+--video:#c4a6f0;--video-bg:#2f2540;--imagen:#7fd1bd;--imagen-bg:#1d332d;--carrusel:#eba680;--carrusel-bg:#3a2a20;--ugc:#9cbcf0;--ugc-bg:#1f2b3d;}}
+:root[data-theme="dark"]{--bg:#1b1815;--surface:#25211d;--ink:#f0e9e1;--muted:#ab9f93;--line:#3a332c;--accent:#e2956a;--accent-soft:#3a2a20;
+--video:#c4a6f0;--video-bg:#2f2540;--imagen:#7fd1bd;--imagen-bg:#1d332d;--carrusel:#eba680;--carrusel-bg:#3a2a20;--ugc:#9cbcf0;--ugc-bg:#1f2b3d;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 Inter,system-ui,sans-serif}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px 80px}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:6px;overflow-x:auto;padding:10px 16px;scrollbar-width:none}
+nav a{flex:none;color:var(--muted);text-decoration:none;font-size:13px;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+nav a:hover{color:var(--accent);border-color:var(--accent)}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.2}
+.hero{padding:48px 0 16px} .hero h1{font-size:clamp(28px,5vw,44px);margin:4px 0 12px}
+.eyebrow{text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--accent);font-weight:600;margin:0}
+section{padding-top:40px;scroll-margin-top:56px} section h2{font-size:clamp(24px,4vw,32px);margin:6px 0 16px}
+.notes{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px;margin-top:32px}
+.notes h2{margin-top:0}
+.callout{background:var(--accent-soft);border-left:3px solid var(--accent);padding:12px 16px;border-radius:8px}
+.pfield{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+.pfield p{margin:4px 0 0}
+.k{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.pain{margin:32px 0 14px;padding-top:18px;border-top:1px dashed var(--line)}
+.pain-n{font-size:12px;font-weight:600;color:var(--accent)} .pain h3{font-size:20px;margin:4px 0 0}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.card.video{--c:var(--video);--cb:var(--video-bg)} .card.imagen{--c:var(--imagen);--cb:var(--imagen-bg)}
+.card.carrusel{--c:var(--carrusel);--cb:var(--carrusel-bg)} .card.ugc{--c:var(--ugc);--cb:var(--ugc-bg)}
+.card-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.num{font-family:Fraunces,serif;font-size:22px;color:var(--muted)}
+.badge{font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--cb);color:var(--c);text-align:right}
+.badge.video{--c:var(--video);--cb:var(--video-bg)} .badge.imagen{--c:var(--imagen);--cb:var(--imagen-bg)}
+.badge.carrusel{--c:var(--carrusel);--cb:var(--carrusel-bg)} .badge.ugc{--c:var(--ugc);--cb:var(--ugc-bg)}
+.angle{margin:0;font-weight:600;font-size:13px;color:var(--ink)} .angle::before{content:"Ángulo · ";color:var(--muted);font-weight:500}
+.field p{margin:2px 0 0} .field.hook p{font-family:Fraunces,serif;font-size:17px;line-height:1.4}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:640px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line)}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);background:var(--bg)}
+tr:last-child td{border-bottom:0}
+.totals{color:var(--muted);font-size:14px}
+.sub{margin:2px 0 6px 24px;color:var(--muted)}
+code{background:var(--accent-soft);padding:1px 6px;border-radius:4px;font-size:13px}
+li{margin-bottom:8px}
+@media print{nav{display:none} .card{break-inside:avoid}}
+</style></head><body><nav><a href="#como-leer">Cómo leer este documento (lógica Andromeda)</a><a href="#p1">La Mamá en Piloto Automático</a><a href="#p2">La Manifestadora Frustrada</a><a href="#p3">La Profesional que No Apaga la Cabeza</a><a href="#p4">La Mujer que Empieza de Cero</a><a href="#p5">La que Regala con Intención</a><a href="#mapa">Mapa de producción</a><a href="#lanzar">Recomendaciones para lanzar</a></nav><div class="wrap">
+<header class="hero"><p class="eyebrow">Mapa de creativos · Meta Ads</p><h1>Estructura de creativos para Meta Ads (Andromeda)</h1>
+<p><strong>Producto:</strong> Journal de manifestación a través de la gratitud — Método 111</p>
+<p><strong>Promesa:</strong> manifestar la vida de tus sueños aprendiendo a agradecer y reprogramando la mente.</p>
+</header>
+<section id="como-leer" class="notes"><h2>Cómo leer este documento (lógica Andromeda)</h2>
+<p>Con Andromeda el creativo <strong>es</strong> el targeting. Meta lee qué dice, quién aparece, cómo habla y qué formato tiene cada anuncio, y con eso decide a quién mostrárselo. Por eso:</p>
+<ol>
+<li><strong>Cada buyer persona es un concepto distinto, no una variación.</strong> Si cambiás solo el color o el texto de un mismo anuncio, Andromeda lo trata como el mismo creativo y no abre audiencia nueva. Lo que cambia la señal es la persona en cámara, el escenario, el lenguaje, el dolor y el formato.</li>
+<li><strong>La señal se refuerza con el casting y el escenario.</strong> Mamá → cocina, auto, chicos de fondo. Profesional → escritorio, notebook, cama de noche con el celular. Buscadora espiritual → velas, cartas, luna, altar. Post-ruptura → departamento nuevo, cajas, caminata sola. Regalo → paquete, moño, mesa de cumpleaños.</li>
+<li><strong>Segmentación amplia.</strong> Una campaña de ventas (Advantage+ o manual con audiencia abierta: país, edad 22-55+, sin intereses), uno o pocos conjuntos y muchos creativos diversos adentro. El filtro lo hace el creativo.</li>
+<li><strong>Política de Meta sobre atributos personales:</strong> no se puede afirmar ni insinuar que la persona que mira tiene un problema de salud mental, una situación de pareja o financiera ("¿Tenés ansiedad?", "¿Te dejaron?"). Por eso los hooks están en <strong>primera persona</strong> ("Yo vivía…") o en tercera ("Las mujeres que…"). Mantené esa regla cuando adaptes los textos.</li>
+<li><strong>Testimonios:</strong> usá testimonios reales de clientas (con su permiso). Si todavía no tenés, grabá UGC con creadoras que usen el journal de verdad durante unos días y cuenten su experiencia, sin inventar resultados.</li>
+</ol>
+<p class="callout">Nota: los textos nombran el Método 111 como el sistema del journal. Donde aparece "[paso del método]", reemplazalo por cómo funciona exactamente tu método (qué se escribe, cuántas veces, en qué momento del día) para que el mensaje sea concreto.</p>
+</section>
+<section id="p1" class="persona"><p class="eyebrow">Buyer persona 1</p><h2>La Mamá en Piloto Automático</h2>
+<div class="pfield"><span class="k">Perfil</span><p>mujer de 32 a 45 años, madre de chicos chicos o en edad escolar. Trabaja (en relación de dependencia o por su cuenta) y además sostiene la casa. Le importan su familia, ser buena madre y recuperar un poco de espacio propio. Consume Reels de maternidad real, organización y bienestar.</p></div>
+<div class="pfield"><span class="k">Lo que desea</span><p>sentirse en paz y presente, disfrutar de su vida en vez de sobrevivirla, y tener un ritual corto que sea solo para ella sin sentir culpa.</p></div>
+<div class="pain"><span class="pain-n">Dolor 1.1</span><h3>Vive en modo queja y agotamiento; los días se le pasan sin disfrutar nada</h3></div>
+<div class="grid">
+<article class="card video"><div class="card-top"><span class="num">#1</span><span class="badge video">Video corto (Reel 15-20 s)</span></div>
+<p class="angle">problema-solución</p>
+<div class="field hook"><span class="k">Hook</span><p>plano cenital del caos: mamadera, mochilas, celular sonando. Texto en pantalla: <em>"Mi día empezaba con un 'uff' y terminaba con un 'no doy más'."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>no hace falta cambiar tu vida para empezar a disfrutarla: con 5 minutos de gratitud por día con el Método 111, tu cabeza empieza a buscar lo que sí está bien.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Empezá tu journal hoy → Comprar ahora"</p></div>
+</article>
+<article class="card ugc"><div class="card-top"><span class="num">#2</span><span class="badge ugc">UGC (testimonio, 30-40 s)</span></div>
+<p class="angle">testimonial</p>
+<div class="field hook"><span class="k">Hook</span><p>mamá real en el auto esperando a la salida del colegio: <em>"Hace un mes me quejaba de todo. Mi marido me lo dijo y me dolió."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>cuenta qué cambió en su humor y en el clima de la casa al escribir sus agradecimientos cada mañana con el journal. Muestra páginas escritas.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Si te viste reflejada, el link está acá abajo."</p></div>
+</article>
+<article class="card carrusel"><div class="card-top"><span class="num">#3</span><span class="badge carrusel">Carrusel (5 placas)</span></div>
+<p class="angle">educativo</p>
+<div class="field hook"><span class="k">Hook (placa 1)</span><p><em>"Por qué las mamás vivimos cansadas aunque durmamos (y no es solo el sueño)."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>placas que explican que el cerebro tiende a fijarse en lo negativo, que la gratitud practicada todos los días entrena la atención hacia lo bueno y cómo el Método 111 lo convierte en un hábito de 5 minutos. Última placa con el journal abierto.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Guardalo y empezá con tu journal → Ver más"</p></div>
+</article>
+</div>
+<div class="pain"><span class="pain-n">Dolor 1.2</span><h3>No tiene tiempo para ella y siente culpa cuando se lo toma</h3></div>
+<div class="grid">
+<article class="card imagen"><div class="card-top"><span class="num">#4</span><span class="badge imagen">Imagen estática</span></div>
+<p class="angle">comparación</p>
+<div class="field hook"><span class="k">Hook</span><p>imagen dividida. Izquierda: <em>"Scrollear 40 min antes de dormir"</em> (celular en la cama). Derecha: <em>"5 min con tu journal"</em> (taza, journal, luz cálida).</p></div>
+<div class="field "><span class="k">Mensaje central</span><p>el tiempo para vos ya existe, solo está mal invertido. El journal 111 te devuelve 5 minutos que sí te llenan.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Elegí tus 5 minutos → Comprar"</p></div>
+</article>
+<article class="card ugc"><div class="card-top"><span class="num">#5</span><span class="badge ugc">UGC (formato "un día conmigo", 30 s)</span></div>
+<p class="angle">problema-solución</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"Lo único que hago para mí en todo el día dura 5 minutos y cambió todo."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>muestra su rutina con los chicos y el único momento en que se sienta con el café y el journal. No es egoísmo: una mamá que se llena a sí misma tiene más para dar.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Regalate tus 5 minutos → link en el anuncio"</p></div>
+</article>
+<article class="card video"><div class="card-top"><span class="num">#6</span><span class="badge video">Video corto (Reel 10-15 s, texto en pantalla)</span></div>
+<p class="angle">urgencia</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"Faltan menos de 90 días para que termine el año."</em> (contador en pantalla)</p></div>
+<div class="field "><span class="k">Mensaje central</span><p>otro año postergándote no. Si empezás hoy, cerrás el año con tres meses de práctica y otra energía para el que viene.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Empezá hoy, no en enero → Comprar ahora"</p></div>
+</article>
+</div>
+<div class="pain"><span class="pain-n">Dolor 1.3</span><h3>Se pone irritable con sus hijos y después se siente mal</h3></div>
+<div class="grid">
+<article class="card video"><div class="card-top"><span class="num">#7</span><span class="badge video">Video corto (Reel narrativo 20-25 s)</span></div>
+<p class="angle">testimonial</p>
+<div class="field hook"><span class="k">Hook</span><p>primer plano de una mamá mirando a su hijo dormir: <em>"Esa noche me prometí que iba a dejar de gritar."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>relato en primera persona: empezó a agradecer cada mañana y se dio cuenta de que tenía más paciencia, porque arrancaba el día desde otro lugar. Termina con una escena de juego con el hijo.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Empezá tu cambio → Conocé el journal"</p></div>
+</article>
+<article class="card imagen"><div class="card-top"><span class="num">#8</span><span class="badge imagen">Imagen estática (frase + producto)</span></div>
+<p class="angle">educativo</p>
+<div class="field hook"><span class="k">Hook</span><p>frase grande: <em>"Los chicos no aprenden lo que les decimos. Aprenden lo que nos ven hacer."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>si querés hijos agradecidos, que te vean agradecer. El journal 111 es un hábito que también podés compartir con ellos.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Sé el ejemplo → Comprar"</p></div>
+</article>
+<article class="card carrusel"><div class="card-top"><span class="num">#9</span><span class="badge carrusel">Carrusel (antes / después, 4 placas)</span></div>
+<p class="angle">comparación</p>
+<div class="field hook"><span class="k">Hook (placa 1)</span><p><em>"La mañana de una mamá sin ritual vs. con ritual."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>placas que comparan el despertar a las corridas y el reto en el desayuno con 5 minutos de gratitud y un desayuno más tranquilo. Última placa: el journal.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Probá el ritual → Ver el journal"</p></div>
+</article>
+</div>
+</section>
+<section id="p2" class="persona"><p class="eyebrow">Buyer persona 2</p><h2>La Manifestadora Frustrada</h2>
+<div class="pfield"><span class="k">Perfil</span><p>mujer de 23 a 38 años, interesada en espiritualidad, ley de atracción, astrología, números angelicales (ve el 111, el 11:11). Consume podcasts y cuentas de manifestación. Ya probó afirmaciones, visualizaciones, vision boards. Le importa crecer, sentirse alineada y ver resultados concretos.</p></div>
+<div class="pfield"><span class="k">Lo que desea</span><p>un método claro y constante que le funcione de verdad, y empezar a ver cambios reales en su vida (trabajo, vínculos, abundancia).</p></div>
+<div class="pain"><span class="pain-n">Dolor 2.1</span><h3>Manifiesta y no pasa nada; siente que "a ella no le funciona"</h3></div>
+<div class="grid">
+<article class="card video"><div class="card-top"><span class="num">#10</span><span class="badge video">Video corto (Reel talking head 20-30 s)</span></div>
+<p class="angle">educativo</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"Si manifestar no te funciona, probablemente te estás salteando este paso."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>pedir sin agradecer es manifestar desde la carencia. La gratitud es la frecuencia que le dice a tu mente "esto ya es mío". El Método 111 pone la gratitud en el centro de la manifestación.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Aprendé a manifestar desde la gratitud → Comprar journal"</p></div>
+</article>
+<article class="card imagen"><div class="card-top"><span class="num">#11</span><span class="badge imagen">Imagen estática (tabla tipo "esto vs. esto")</span></div>
+<p class="angle">comparación</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"Manifestar desde la carencia vs. manifestar desde la gratitud."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>dos columnas: "Quiero que llegue…" frente a "Gracias porque ya…"; "Me falta…" frente a "Agradezco lo que tengo y lo que viene". El journal 111 te entrena en la segunda columna.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Cambiá tu frecuencia → Ver más"</p></div>
+</article>
+<article class="card ugc"><div class="card-top"><span class="num">#12</span><span class="badge ugc">UGC (testimonio 30-45 s)</span></div>
+<p class="angle">testimonial</p>
+<div class="field hook"><span class="k">Hook</span><p>creadora con el journal en la mano: <em>"Llevaba dos años 'manifestando' y nada. Esto fue lo que cambié."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>cuenta que dejó de pedir y empezó a agradecer con el método 111, y qué empezó a notar en su vida (contalo con resultados reales y concretos de la clienta).</p></div>
+<div class="field "><span class="k">CTA</span><p>"Te dejo el journal acá abajo ✨"</p></div>
+</article>
+</div>
+<div class="pain"><span class="pain-n">Dolor 2.2</span><h3>Empieza journals y rituales con entusiasmo y los abandona a la semana</h3></div>
+<div class="grid">
+<article class="card carrusel"><div class="card-top"><span class="num">#13</span><span class="badge carrusel">Carrusel (5 placas)</span></div>
+<p class="angle">problema-solución</p>
+<div class="field hook"><span class="k">Hook (placa 1)</span><p>foto de cuadernos a medio usar: <em>"Mi cementerio de cuadernos de manifestación 🪦"</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>el problema no era tu disciplina, era que no tenías un método. El journal 111 está guiado: abrís, seguís la página, en 5 minutos terminaste. Sin hojas en blanco.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Este sí lo vas a terminar → Comprar"</p></div>
+</article>
+<article class="card ugc"><div class="card-top"><span class="num">#14</span><span class="badge ugc">UGC (formato "probé X durante 21 días")</span></div>
+<p class="angle">comparación</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"Probé journal libre y journal guiado. Uno lo abandoné en 4 días."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>compara la hoja en blanco (no sabía qué escribir, se aburría) con el journal guiado del Método 111 (estructura, se completa rápido, ve su progreso).</p></div>
+<div class="field "><span class="k">CTA</span><p>"Probá el que sí funciona → link"</p></div>
+</article>
+<article class="card imagen"><div class="card-top"><span class="num">#15</span><span class="badge imagen">Imagen estática (estética mística)</span></div>
+<p class="angle">urgencia</p>
+<div class="field hook"><span class="k">Hook</span><p>número 111 grande y luminoso: <em>"Si estás viendo el 111, es tu señal para empezar."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>el 111 simboliza nuevos comienzos. Deja de esperar el momento perfecto: este es el momento.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Tomá la señal → Comprar ahora"</p></div>
+</article>
+</div>
+</section>
+<section id="p3" class="persona"><p class="eyebrow">Buyer persona 3</p><h2>La Profesional que No Apaga la Cabeza</h2>
+<div class="pfield"><span class="k">Perfil</span><p>mujer de 27 a 42 años, trabaja en relación de dependencia o es emprendedora. Exigente consigo misma, productiva, sobrepiensa. Le importan su carrera, la eficiencia y sentirse en control. Consume contenido de productividad, hábitos y desarrollo personal. Es escéptica con lo "demasiado espiritual".</p></div>
+<div class="pfield"><span class="k">Lo que desea</span><p>bajar el ruido mental, dormir mejor, disfrutar de lo que logra y tener un hábito simple, práctico y con lógica.</p></div>
+<div class="pain"><span class="pain-n">Dolor 3.1</span><h3>Su mente no para; se acuesta repasando pendientes y preocupaciones</h3></div>
+<div class="grid">
+<article class="card video"><div class="card-top"><span class="num">#16</span><span class="badge video">Video corto (Reel POV 10-15 s)</span></div>
+<p class="angle">problema-solución</p>
+<div class="field hook"><span class="k">Hook</span><p>POV en la cama, 2:47 am en el celular, texto: <em>"Mi cabeza a las 3 am repasando el mail que mandé a las 10."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>corte a la misma persona escribiendo en el journal antes de dormir. Cerrar el día anotando lo que salió bien le da a la cabeza otro lugar donde ir.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Cerrá el día distinto → Comprar journal"</p></div>
+</article>
+<article class="card imagen"><div class="card-top"><span class="num">#17</span><span class="badge imagen">Imagen estática (estilo infografía limpia)</span></div>
+<p class="angle">educativo</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"5 minutos. 3 líneas. Un cerebro que aprende a buscar lo bueno."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>explicación concreta del Método 111 en tres pasos ([paso del método]). Tono práctico, sin misticismo: un hábito de reencuadre mental que cabe en tu agenda.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Sumalo a tu rutina → Ver el journal"</p></div>
+</article>
+<article class="card ugc"><div class="card-top"><span class="num">#18</span><span class="badge ugc">UGC (creadora en home office, 30 s)</span></div>
+<p class="angle">comparación</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"Probé meditar, apps y terapia de respiración. Lo que me funcionó fue más simple."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>compara: meditar le costaba (la cabeza seguía), las apps las abandonaba; escribir es activo, concreto y le permite "bajar" lo que piensa. Muestra el journal en el escritorio.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Probalo esta semana → link"</p></div>
+</article>
+</div>
+<div class="pain"><span class="pain-n">Dolor 3.2</span><h3>Logra cosas pero nunca le alcanza; no disfruta sus logros</h3></div>
+<div class="grid">
+<article class="card carrusel"><div class="card-top"><span class="num">#19</span><span class="badge carrusel">Carrusel (testimonio en formato chat / nota del celular)</span></div>
+<p class="angle">testimonial</p>
+<div class="field hook"><span class="k">Hook (placa 1)</span><p>captura estilo nota: <em>"Me ascendieron y lo celebré 10 minutos. Después ya estaba pensando en lo que faltaba."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>relato real de una clienta: empezó a anotar logros y agradecimientos diarios y por primera vez sintió que su vida estaba avanzando. Última placa: el journal.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Empezá a registrar lo que ya lograste → Comprar"</p></div>
+</article>
+<article class="card video"><div class="card-top"><span class="num">#20</span><span class="badge video">Video corto (Reel con texto dinámico 15 s)</span></div>
+<p class="angle">comparación</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"Tu yo de hace 5 años mataría por la vida que tenés hoy."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>split visual entre "lo que querías hace 5 años" y "lo que tenés hoy". La gratitud no te quita ambición: te deja disfrutar del camino mientras vas por más.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Agradecé lo que ya tenés → Ver journal"</p></div>
+</article>
+<article class="card imagen"><div class="card-top"><span class="num">#21</span><span class="badge imagen">Imagen estática (fondo liso, tipografía fuerte)</span></div>
+<p class="angle">urgencia</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"El 'cuando logre X voy a estar bien' nunca llega."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>si no aprendés a disfrutar ahora, ningún logro va a alcanzar. Empezá hoy con 5 minutos.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Empezá hoy → Comprar ahora"</p></div>
+</article>
+</div>
+</section>
+<section id="p4" class="persona"><p class="eyebrow">Buyer persona 4</p><h2>La Mujer que Empieza de Cero</h2>
+<div class="pfield"><span class="k">Perfil</span><p>mujer de 30 a 55 años en plena transición: separación, mudanza, cambio de trabajo, nido vacío o cumpleaños "bisagra". Está reconstruyéndose. Le importan recuperar su identidad, su autoestima y su ilusión por el futuro. Consume contenido de amor propio, reinvención y frases motivacionales.</p></div>
+<div class="pfield"><span class="k">Lo que desea</span><p>volver a sentirse ella, confiar en que lo que viene puede ser mejor y diseñar una nueva vida desde un lugar sano.</p></div>
+<div class="pain"><span class="pain-n">Dolor 4.1</span><h3>Siente que perdió todo y que tiene la autoestima por el piso</h3></div>
+<div class="grid">
+<article class="card ugc"><div class="card-top"><span class="num">#22</span><span class="badge ugc">UGC (testimonio emocional 40-60 s)</span></div>
+<p class="angle">testimonial</p>
+<div class="field hook"><span class="k">Hook</span><p>mujer sentada en un departamento con cajas de mudanza: <em>"Hace un año empecé de cero con una valija y este cuaderno."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>cuenta cómo, en el peor momento, agradecer cosas mínimas (un café, una amiga, un día de sol) la ayudó a reconstruirse. Muestra el journal lleno.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Tu nuevo capítulo empieza acá → link"</p></div>
+</article>
+<article class="card carrusel"><div class="card-top"><span class="num">#23</span><span class="badge carrusel">Carrusel (5 placas, estética editorial)</span></div>
+<p class="angle">educativo</p>
+<div class="field hook"><span class="k">Hook (placa 1)</span><p><em>"Lo que nadie te dice sobre empezar de nuevo."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>placas sobre que el duelo y la gratitud pueden convivir, que agradecer no es negar el dolor, y cómo un ritual diario con el Método 111 te da un ancla cuando todo cambia.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Guardalo para cuando lo necesites → Conocé el journal"</p></div>
+</article>
+<article class="card imagen"><div class="card-top"><span class="num">#24</span><span class="badge imagen">Imagen estática (journal abierto con letra a mano)</span></div>
+<p class="angle">problema-solución</p>
+<div class="field hook"><span class="k">Hook</span><p>página escrita a mano: <em>"Hoy agradezco: haberme elegido."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>cuando sentís que perdiste todo, la gratitud te muestra lo que sigue en pie, empezando por vos. El journal 111 te acompaña a reconstruir tu autoestima página por página.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Elegite → Comprar"</p></div>
+</article>
+</div>
+<div class="pain"><span class="pain-n">Dolor 4.2</span><h3>Le da miedo el futuro; no sabe qué viene ni cómo imaginarlo</h3></div>
+<div class="grid">
+<article class="card video"><div class="card-top"><span class="num">#25</span><span class="badge video">Video corto (Reel cinematográfico 15-20 s)</span></div>
+<p class="angle">urgencia</p>
+<div class="field hook"><span class="k">Hook</span><p>mujer abriendo una ventana a la mañana, voz en off: <em>"Un día vas a mirar atrás y vas a agradecer este final."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>este es el momento de escribir la vida que querés, no de esperar a que pase el miedo. El Método 111 te ayuda a reprogramar tu mente hacia lo que viene.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Escribí tu nuevo comienzo hoy → Comprar ahora"</p></div>
+</article>
+<article class="card imagen"><div class="card-top"><span class="num">#26</span><span class="badge imagen">Imagen estática (dos versiones de una misma mujer)</span></div>
+<p class="angle">comparación</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"Ella esperando que el miedo se vaya / Ella escribiendo su nueva vida con miedo y todo."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>el futuro no se espera, se diseña. Agradecer por adelantado lo que querés vivir es entrenar a tu mente para ir hacia ahí.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Diseñá lo que viene → Ver journal"</p></div>
+</article>
+<article class="card ugc"><div class="card-top"><span class="num">#27</span><span class="badge ugc">UGC (formato "lo que escribí vs. lo que pasó")</span></div>
+<p class="angle">problema-solución</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"Hace 6 meses escribí esto en mi journal. Hoy les muestro qué pasó."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>lee una página vieja (con miedo e incertidumbre, pero agradeciendo lo que quería vivir) y cuenta cómo cambió su forma de mirar el futuro. Usar historia real.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Empezá a escribir la tuya → link"</p></div>
+</article>
+</div>
+</section>
+<section id="p5" class="persona"><p class="eyebrow">Buyer persona 5</p><h2>La que Regala con Intención</h2>
+<div class="pfield"><span class="k">Perfil</span><p>mujer de 25 a 55 años que busca un regalo para su mamá, hermana, amiga o compañera de trabajo (Día de la Madre, cumpleaños, Navidad, amigo invisible). Le importa que el regalo tenga significado y no sea "uno más". Puede no estar interesada en manifestación para ella misma, pero sí en regalar bienestar.</p></div>
+<div class="pfield"><span class="k">Lo que desea</span><p>un regalo lindo, con valor emocional, que la otra persona use de verdad y que la haga quedar bien.</p></div>
+<div class="pain"><span class="pain-n">Dolor 5.1</span><h3>Siempre termina regalando algo genérico que no dice nada</h3></div>
+<div class="grid">
+<article class="card carrusel"><div class="card-top"><span class="num">#28</span><span class="badge carrusel">Carrusel (gift guide, 4-5 placas)</span></div>
+<p class="angle">comparación</p>
+<div class="field hook"><span class="k">Hook (placa 1)</span><p><em>"Regalos que se olvidan en una semana vs. un regalo que se usa todos los días."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>velas, tazas, perfumes frente a un journal que la acompaña cada mañana durante meses. Placas con el packaging y la dedicatoria.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Regalá algo que se queda → Comprar"</p></div>
+</article>
+<article class="card video"><div class="card-top"><span class="num">#29</span><span class="badge video">Video corto (Reel de unboxing / reacción 15-20 s)</span></div>
+<p class="angle">problema-solución</p>
+<div class="field hook"><span class="k">Hook</span><p>manos abriendo el paquete, texto: <em>"El regalo que hizo llorar a mi mamá (de emoción)."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>no sabía qué regalarle; le regaló un hábito para sentirse mejor cada día. Planos del packaging, la primera página y la reacción.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Pedí el tuyo para regalar → Comprar ahora"</p></div>
+</article>
+<article class="card imagen"><div class="card-top"><span class="num">#30</span><span class="badge imagen">Imagen estática (producto con moño + fecha)</span></div>
+<p class="angle">urgencia</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"Día de la Madre: 18 de octubre. ¿Ya tenés su regalo?"</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>un regalo con significado, listo para regalar. Pedilo antes del [fecha límite de envío] para que llegue a tiempo. (Para Navidad / Reyes, cambiar fecha.)</p></div>
+<div class="field "><span class="k">CTA</span><p>"Pedilo hoy y llega a tiempo → Comprar"</p></div>
+</article>
+</div>
+<div class="pain"><span class="pain-n">Dolor 5.2</span><h3>Quiere acompañar a alguien que la está pasando mal y no sabe cómo</h3></div>
+<div class="grid">
+<article class="card ugc"><div class="card-top"><span class="num">#31</span><span class="badge ugc">UGC (testimonio de quien regaló, 30 s)</span></div>
+<p class="angle">testimonial</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"Mi mejor amiga estaba atravesando el peor año de su vida y no sabía qué decirle."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>le regaló el journal con una dedicatoria y meses después su amiga le dijo que la había ayudado a salir adelante. Usar historia real.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Regalale un nuevo comienzo → link"</p></div>
+</article>
+<article class="card imagen"><div class="card-top"><span class="num">#32</span><span class="badge imagen">Imagen estática (tarjeta de dedicatoria + journal)</span></div>
+<p class="angle">educativo</p>
+<div class="field hook"><span class="k">Hook</span><p>tarjeta manuscrita: <em>"Para que cada día encuentres algo para agradecer."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>cuando no sabés qué decir, regalar un hábito de gratitud es una forma de decir "estoy con vos" que dura todos los días. Explica en una línea qué es el Método 111.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Acompañala con este regalo → Comprar"</p></div>
+</article>
+<article class="card video"><div class="card-top"><span class="num">#33</span><span class="badge video">Video corto (Reel emocional 15 s)</span></div>
+<p class="angle">urgencia</p>
+<div class="field hook"><span class="k">Hook</span><p><em>"Hay personas que no te piden ayuda. Pero la necesitan."</em></p></div>
+<div class="field "><span class="k">Mensaje central</span><p>no esperes a una fecha especial para estar presente. Un journal de gratitud puede ser el empujón que necesita hoy.</p></div>
+<div class="field "><span class="k">CTA</span><p>"Regaláselo hoy → Comprar ahora"</p></div>
+</article>
+</div>
+</section>
+<section id="mapa"><h2>Mapa De Producción — Tabla Resumen</h2>
+<div class="table-wrap"><table><thead><tr><th>#</th><th>Buyer persona</th><th>Dolor</th><th>Formato</th><th>Ángulo</th></tr></thead><tbody><tr><td>1</td><td>Mamá en Piloto Automático</td><td>Modo queja / agotamiento</td><td><span class="badge video">Video corto</span></td><td>Problema-solución</td></tr><tr><td>2</td><td>Mamá en Piloto Automático</td><td>Modo queja / agotamiento</td><td><span class="badge ugc">UGC</span></td><td>Testimonial</td></tr><tr><td>3</td><td>Mamá en Piloto Automático</td><td>Modo queja / agotamiento</td><td><span class="badge carrusel">Carrusel</span></td><td>Educativo</td></tr><tr><td>4</td><td>Mamá en Piloto Automático</td><td>Sin tiempo para ella / culpa</td><td><span class="badge imagen">Imagen</span></td><td>Comparación</td></tr><tr><td>5</td><td>Mamá en Piloto Automático</td><td>Sin tiempo para ella / culpa</td><td><span class="badge ugc">UGC</span></td><td>Problema-solución</td></tr><tr><td>6</td><td>Mamá en Piloto Automático</td><td>Sin tiempo para ella / culpa</td><td><span class="badge video">Video corto</span></td><td>Urgencia</td></tr><tr><td>7</td><td>Mamá en Piloto Automático</td><td>Irritabilidad con los hijos</td><td><span class="badge video">Video corto</span></td><td>Testimonial</td></tr><tr><td>8</td><td>Mamá en Piloto Automático</td><td>Irritabilidad con los hijos</td><td><span class="badge imagen">Imagen</span></td><td>Educativo</td></tr><tr><td>9</td><td>Mamá en Piloto Automático</td><td>Irritabilidad con los hijos</td><td><span class="badge carrusel">Carrusel</span></td><td>Comparación</td></tr><tr><td>10</td><td>Manifestadora Frustrada</td><td>Manifiesta y no pasa nada</td><td><span class="badge video">Video corto</span></td><td>Educativo</td></tr><tr><td>11</td><td>Manifestadora Frustrada</td><td>Manifiesta y no pasa nada</td><td><span class="badge imagen">Imagen</span></td><td>Comparación</td></tr><tr><td>12</td><td>Manifestadora Frustrada</td><td>Manifiesta y no pasa nada</td><td><span class="badge ugc">UGC</span></td><td>Testimonial</td></tr><tr><td>13</td><td>Manifestadora Frustrada</td><td>Empieza y abandona</td><td><span class="badge carrusel">Carrusel</span></td><td>Problema-solución</td></tr><tr><td>14</td><td>Manifestadora Frustrada</td><td>Empieza y abandona</td><td><span class="badge ugc">UGC</span></td><td>Comparación</td></tr><tr><td>15</td><td>Manifestadora Frustrada</td><td>Empieza y abandona</td><td><span class="badge imagen">Imagen</span></td><td>Urgencia</td></tr><tr><td>16</td><td>Profesional que No Apaga la Cabeza</td><td>Mente que no para de noche</td><td><span class="badge video">Video corto</span></td><td>Problema-solución</td></tr><tr><td>17</td><td>Profesional que No Apaga la Cabeza</td><td>Mente que no para de noche</td><td><span class="badge imagen">Imagen</span></td><td>Educativo</td></tr><tr><td>18</td><td>Profesional que No Apaga la Cabeza</td><td>Mente que no para de noche</td><td><span class="badge ugc">UGC</span></td><td>Comparación</td></tr><tr><td>19</td><td>Profesional que No Apaga la Cabeza</td><td>Nunca le alcanza lo que logra</td><td><span class="badge carrusel">Carrusel</span></td><td>Testimonial</td></tr><tr><td>20</td><td>Profesional que No Apaga la Cabeza</td><td>Nunca le alcanza lo que logra</td><td><span class="badge video">Video corto</span></td><td>Comparación</td></tr><tr><td>21</td><td>Profesional que No Apaga la Cabeza</td><td>Nunca le alcanza lo que logra</td><td><span class="badge imagen">Imagen</span></td><td>Urgencia</td></tr><tr><td>22</td><td>Mujer que Empieza de Cero</td><td>Autoestima rota / perdió todo</td><td><span class="badge ugc">UGC</span></td><td>Testimonial</td></tr><tr><td>23</td><td>Mujer que Empieza de Cero</td><td>Autoestima rota / perdió todo</td><td><span class="badge carrusel">Carrusel</span></td><td>Educativo</td></tr><tr><td>24</td><td>Mujer que Empieza de Cero</td><td>Autoestima rota / perdió todo</td><td><span class="badge imagen">Imagen</span></td><td>Problema-solución</td></tr><tr><td>25</td><td>Mujer que Empieza de Cero</td><td>Miedo al futuro</td><td><span class="badge video">Video corto</span></td><td>Urgencia</td></tr><tr><td>26</td><td>Mujer que Empieza de Cero</td><td>Miedo al futuro</td><td><span class="badge imagen">Imagen</span></td><td>Comparación</td></tr><tr><td>27</td><td>Mujer que Empieza de Cero</td><td>Miedo al futuro</td><td><span class="badge ugc">UGC</span></td><td>Problema-solución</td></tr><tr><td>28</td><td>La que Regala con Intención</td><td>Regalos genéricos</td><td><span class="badge carrusel">Carrusel</span></td><td>Comparación</td></tr><tr><td>29</td><td>La que Regala con Intención</td><td>Regalos genéricos</td><td><span class="badge video">Video corto</span></td><td>Problema-solución</td></tr><tr><td>30</td><td>La que Regala con Intención</td><td>Regalos genéricos</td><td><span class="badge imagen">Imagen</span></td><td>Urgencia</td></tr><tr><td>31</td><td>La que Regala con Intención</td><td>Acompañar a alguien que la pasa mal</td><td><span class="badge ugc">UGC</span></td><td>Testimonial</td></tr><tr><td>32</td><td>La que Regala con Intención</td><td>Acompañar a alguien que la pasa mal</td><td><span class="badge imagen">Imagen</span></td><td>Educativo</td></tr><tr><td>33</td><td>La que Regala con Intención</td><td>Acompañar a alguien que la pasa mal</td><td><span class="badge video">Video corto</span></td><td>Urgencia</td></tr></tbody></table></div>
+<p class="totals"><strong>Totales por formato:</strong> Video corto 9 · Imagen 10 · Carrusel 6 · UGC 8</p>
+<p class="totals"><strong>Totales por ángulo:</strong> Problema-solución 7 · Testimonial 6 · Educativo 6 · Comparación 8 · Urgencia 6</p>
+</section>
+<section id="lanzar" class="notes"><h2>Recomendaciones para lanzar</h2>
+<ol>
+<li><strong>Nomenclatura</strong> para leer resultados por concepto: <code>P1-D1-C01_VID_PS</code> (persona, dolor, creativo, formato, ángulo).</li>
+<li><strong>Orden de producción sugerido:</strong></li>
+<p class="sub"><strong>Primera tanda (para lanzar ya):</strong> los creativos 1, 2, 10, 12, 13, 16, 22, 29 y 30. Cubren las 5 personas y los 4 formatos, y suman el Día de la Madre (18/10).</p>
+<p class="sub"><strong>Segunda tanda:</strong> el resto, con prioridad en las personas que mejor respondan.</p>
+<li><strong>Estructura:</strong> 1 campaña de ventas, audiencia amplia, 1 o 2 conjuntos con 10 a 15 creativos cada uno. No separes por persona en distintos conjuntos con intereses: dejá que el creativo haga el trabajo.</li>
+<li><strong>Lectura de resultados:</strong> a los 5-7 días mirá qué persona y qué dolor consiguen compras a mejor costo (no solo CTR). Al concepto ganador hacele nuevas versiones con otro hook, otra creadora u otro escenario. Al que no funciona, cambiale el concepto, no solo el color.</li>
+<li><strong>Dejá Advantage+ Creative activado con moderación</strong> (mejoras visuales básicas sí; textos generados automáticamente revisalos, para que no rompan el tono de cada persona).</li>
+<li><strong>Variantes de copy y título:</strong> cargá 3 textos principales por anuncio, en el mismo tono de la persona, para que Meta optimice sin mezclar señales.</li>
+</ol>
+</section>
+</div></body></html>
